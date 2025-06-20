@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/PretendoNetwork/nex-go/v2"
+	common_globals "github.com/PretendoNetwork/nex-protocols-common-go/v2/globals"
 	"github.com/PretendoNetwork/yo-kai-watch-blasters/globals"
 )
 
@@ -25,16 +26,31 @@ func StartSecureServer() {
 
 	globals.SecureEndpoint.OnData(func(packet nex.PacketInterface) {
 		request := packet.RMCMessage()
+		protocol := globals.GetProtocolByID(request.ProtocolID)
 
-		fmt.Println("==Yo-kai Watch Blasters- Secure==")
-		fmt.Printf("Protocol ID: %d\n", request.ProtocolID)
-		fmt.Printf("Method ID: %d\n", request.MethodID)
+		// userData, err := globals.UserDataFromPID(packet.Sender().PID())
+
+		// var username string
+		// if err != 0 {
+		// 	// Some edge cases probably apply, but generally this is fine
+		// 	username = "3DS User"
+		// } else {
+		// 	username = userData.Username
+		// }
+
+		fmt.Println("== Yo-kai Watch Blasters - Secure ==")
+		fmt.Printf("User: %d\n", packet.Sender().PID())
+		fmt.Printf("Protocol: %d (%s)\n", request.ProtocolID, protocol.Protocol())
+		fmt.Printf("Method: %d (%s)\n", request.MethodID, protocol.GetMethodByID(request.MethodID))
 		fmt.Println("===============")
 	})
 
 	globals.SecureEndpoint.OnError(func(err *nex.Error) {
 		globals.Logger.Errorf("Secure: %v", err)
 	})
+
+	globals.MatchmakingManager = common_globals.NewMatchmakingManager(globals.SecureEndpoint, globals.Postgres)
+	globals.MessagingManager = common_globals.NewMessagingManager(globals.SecureEndpoint, globals.Postgres)
 
 	registerCommonSecureServerProtocols()
 

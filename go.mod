@@ -36,4 +36,4 @@ require (
 	google.golang.org/protobuf v1.36.6 // indirect
 )
 
-replace github.com/PretendoNetwork/nex-protocols-common-go/v2 => ../nex-protocols-common-go-md-gps
+replace github.com/PretendoNetwork/nex-protocols-common-go/v2 => github.com/TraceEntertains/nex-protocols-common-go/v2 v2.0.0-20250620032648-7e04d79f9c2a

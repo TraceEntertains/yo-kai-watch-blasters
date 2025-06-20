@@ -8,6 +8,8 @@ github.com/PretendoNetwork/plogger-go v1.1.0 h1:x2XgyeeM8zDFGy+NcIZd3SYC2fNrVWpB
 github.com/PretendoNetwork/plogger-go v1.1.0/go.mod h1:wpltahp91IXr9nOvWgwep8zGtUKDeCVwm+/Wa484lQ4=
 github.com/PretendoNetwork/pq-extended v1.0.0 h1:GHZ0hLvCvmYKQPTV9I9XtTx8J1iB5Z9CEnfW2tUpsYg=
 github.com/PretendoNetwork/pq-extended v1.0.0/go.mod h1:bq6Ai+3lG4/M0iamUBt2Uzi5vL/nYy1a1Ar2ow9NDF0=
+github.com/TraceEntertains/nex-protocols-common-go/v2 v2.0.0-20250620032648-7e04d79f9c2a h1:o9XYMBavRwd2mYtVnxoImj+swWriMFY0zr5LZUsAKtg=
+github.com/TraceEntertains/nex-protocols-common-go/v2 v2.0.0-20250620032648-7e04d79f9c2a/go.mod h1:tNtZly5sL3wfy4LVgybS2efm00L/wNgyvcrBV59S/YM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dolthub/maphash v0.1.0 h1:bsQ7JsF4FkkWyrP3oCnFJgrCUAFbFf3kOl4L/QxPDyQ=
